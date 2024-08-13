@@ -2,10 +2,12 @@
 
 .busca{
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 .buscar{
   margin-right: 2pc;
+  position: relative;
+  top: 2pc;
 }
 #buscar-input{
   background-color: #CCCCCC;
@@ -67,7 +69,11 @@
   width: 80px;
 }
 
+.user{
+  text-align: center;
+  margin-left: 2pc;
 
+}
 
 
 

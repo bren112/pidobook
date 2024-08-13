@@ -10,6 +10,7 @@ function Ebook() {
       <div className="busca">
         <div className="user">
           <img src={iguana} id='iguana' alt="" srcset="" />
+          <p>USUARIO</p>
         </div>
         <div className="buscar">
           <input type="text" id='buscar-input'/>
