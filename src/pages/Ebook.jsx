@@ -1,15 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './ebook.css';
 import tigre from './tigre.jpg';
 import iguana from './iguana.jpg';
+import PDFObject from 'pdfobject';
+
+import tigrePdf from './b.pdf';
 
 function Ebook() {
+  const [showModal, setShowModal] = useState(false);
+  const pdfContainerRef = useRef(null);
+
+  const handleOpenPdf = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  useEffect(() => {
+    if (showModal && pdfContainerRef.current) {
+      PDFObject.embed(tigrePdf, pdfContainerRef.current);
+    }
+  }, [showModal]);
+
   return (
     <div>
-      <br />
       <div className="busca">
         <div className="user">
-          <img src={iguana} id='iguana' alt="" srcset="" />
+          <img src={iguana} id='iguana' alt="" />
           <p>USUARIO</p>
         </div>
         <div className="buscar">
@@ -24,18 +43,27 @@ function Ebook() {
       <h1 id='titulo-ebook'>BIOLOGIA E-BOOKS</h1>
       <br />
       <div className="ebooks">
-       
         {[...Array(10)].map((_, index) => (
           <div className="card" key={index}>
             <br />
             <img src={tigre} alt="Tigre" id='tigre-img'/>
             <h1>"TUDO SOBRE O TIGRE"</h1>
             <br />
-            <button id='btn-card'>Baixar</button>
+            <button id='btn-card' onClick={handleOpenPdf}>Abrir</button>
           </div>
         ))}
       </div>
       <br />
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <button className="modal-close" onClick={handleCloseModal}>×</button>
+            <div className="pdf-viewer" ref={pdfContainerRef} style={{ width: '100%', height: '100%' }}>
+      
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
