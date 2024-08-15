@@ -1,15 +1,61 @@
 import React, { useState, useEffect } from 'react';
-// import { supabase } from '../supabase/supabase';
+import { supabase } from "../supabaseClient.js"; 
 import './cadastrar.css'; 
 
 function Login() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
   
+    const fetchUsers = async () => {
+      const { data, error } = await supabase
+        .from('User')
+        .select('id, nome, telefone, email, senha, avatar');
+
+      if (error) {
+        console.error('Error fetching users:', error);
+      } else {
+        setUsers(data);
+      }
+    };
+
+    fetchUsers();
+  }, []); 
 
   return (
-  <div>
-Login
-
-  </div>
+    <div>
+      <h1>Login</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Senha</th>
+            <th>Avatar</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map(user => (
+            <tr key={user.id}>
+              <td>{user.id}</td>
+              <td>{user.nome}</td>
+              <td>{user.telefone}</td>
+              <td>{user.email}</td>
+              <td>{user.senha}</td>
+              <td>
+                {user.avatar ? (
+                  <img src={user.avatar} alt="Avatar" width="50" height="50" />
+                ) : (
+                  'No avatar'
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

@@ -4,7 +4,7 @@ import tigre from './tigre.jpg';
 import iguana from './iguana.jpg';
 import PDFObject from 'pdfobject';
 
-import tigrePdf from './b.pdf';
+import tigrePdf from './a.pdf';
 
 function Ebook() {
   const [showModal, setShowModal] = useState(false);
@@ -59,7 +59,7 @@ function Ebook() {
           <div className="modal-content">
             <button className="modal-close" onClick={handleCloseModal}>×</button>
             <div className="pdf-viewer" ref={pdfContainerRef} style={{ width: '100%', height: '100%' }}>
-      
+              {/* PDFObject will embed the PDF here */}
             </div>
           </div>
         </div>
