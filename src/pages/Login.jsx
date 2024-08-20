@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../supabaseclient'; 
+import { supabase } from './supabaseclient'; 
 
 import './cadastrar.css'; 
 
@@ -29,7 +29,7 @@ function Login() {
       <table>
         <thead>
           <tr>
-            <th>ID</th>
+        
             <th>Nome</th>
             <th>Telefone</th>
             <th>Email</th>
@@ -40,7 +40,7 @@ function Login() {
         <tbody>
           {users.map(user => (
             <tr key={user.id}>
-              <td>{user.id}</td>
+             
               <td>{user.nome}</td>
               <td>{user.telefone}</td>
               <td>{user.email}</td>
@@ -54,8 +54,8 @@ function Login() {
               </td>
             </tr>
           ))}
-        </tbody>
-      </table>
+        </tbody> 
+  </table>
     </div>
   );
 }
