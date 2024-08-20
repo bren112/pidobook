@@ -1,32 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../supabaseclient'; 
+// import { supabase } from '../supabaseclient'; 
 
 import './cadastrar.css'; 
 
 function Login() {
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
 
-  useEffect(() => {
+  // useEffect(() => {
   
-    const fetchUsers = async () => {
-      const { data, error } = await supabase
-        .from('User')
-        .select('id, nome, telefone, email, senha, avatar');
+  //   const fetchUsers = async () => {
+  //     const { data, error } = await supabase
+  //       .from('User')
+  //       .select('id, nome, telefone, email, senha, avatar');
 
-      if (error) {
-        console.error('Error fetching users:', error);
-      } else {
-        setUsers(data);
-      }
-    };
+  //     if (error) {
+  //       console.error('Error fetching users:', error);
+  //     } else {
+  //       setUsers(data);
+  //     }
+  //   };
 
-    fetchUsers();
-  }, []); 
+  //   fetchUsers();
+  // }, []); 
 
   return (
     <div>
       <h1>Login</h1>
-      <table>
+      {/* <table>
         <thead>
           <tr>
             <th>ID</th>
@@ -54,8 +54,8 @@ function Login() {
               </td>
             </tr>
           ))}
-        </tbody>
-      </table>
+        </tbody> */}
+      {/* </table> */}
     </div>
   );
 }
