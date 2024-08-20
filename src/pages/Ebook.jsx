@@ -36,7 +36,7 @@ function Ebook() {
          
         </div>
       </div>
-      <h1 id='titulo-ebook'>BIOLOGIA E-BOOKS</h1>
+      <h1 id='titulo-ebook'>E-BOOKS</h1>
       <br />
       <div className="ebooks">
         {[...Array(10)].map((_, index) => (
