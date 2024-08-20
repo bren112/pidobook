@@ -22,7 +22,7 @@ function Home() {
           </Link>
           
         </div>
-        <br></br>
+        
       </div>
     </div>
   );
