@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Alert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
 import { supabase } from '../supabaseclient'; 
+
 import InputMask from 'react-input-mask'; 
 import './cadastrar.css'; 
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../supabaseclient';
+import { supabase } from '../supabaseclient'; 
+
 import './cadastrar.css'; 
 
 function Login() {
