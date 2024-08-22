@@ -1,69 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-.busca{
+.busca {
   display: flex;
   justify-content: space-between;
 }
-.buscar{
+
+.buscar {
   margin-right: 2pc;
   position: relative;
   top: 2pc;
 }
-#buscar-input{
+
+#buscar-input {
   background-color: #CCCCCC;
   border: none;
   border-radius: 2pc;
   cursor: pointer;
 }
-#buscar-input:hover{
+
+#buscar-input:hover {
   transition: 0.96s;
   background-color: rgb(187, 187, 187);
 }
-#buscar-btn{
+
+#buscar-btn {
   background-color: rgba(240, 248, 255, 0);
   border: none;
   cursor: pointer;
 }
-#titulo-ebook{
+
+#titulo-ebook {
   font-size: 4pc;
   font-family: "Jolly Lodger", system-ui;
   letter-spacing: 0.2pc;
   font-weight: bold;
   text-align: center;
 }
-#tigre-img{
+
+#tigre-img {
   width: 235px;
   height: 157px;
   border-radius: 10px;
 }
+
 .ebooks {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 16px;
 }
-.card{
+
+.card {
   width: 265px;
   height: auto;
   border-radius: 20px;
   background-color: #E8E8E8;
   display: flex;
   flex-direction: column;
- 
 }
-.card h1{
+
+.card h1 {
   font-size: 1pc;
   font-weight: 400;
   margin-top: 0.5pc;
 }
-#btn-card{
+
+#btn-card {
   background-color: #9BB277;
   width: 188px;
   height: 41px;
   border-radius: 8px;
   border: none;
 }
-#visto{
+
+#visto {
   background-color: #14c5b0;
   width: 42px;
   height: 41px;
@@ -71,43 +81,30 @@
   border: none;
 }
 
-#iguana{
+#iguana {
   border-radius: 10pc;
   width: 80px;
 }
 
-.user{
+.user {
   text-align: center;
   margin-left: 2pc;
-
 }
 
-.modal-overlay {
+.pdf-fullscreen {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: #fff;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   z-index: 1000;
 }
 
-
-.modal-content {
-  position: relative;
-  background: #fff;
-  width: 80%;
-  height: 80%;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-
-.modal-close {
+.pdf-close {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -115,13 +112,15 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: var(--primary);
+  color: #000;
+  z-index: 1001;
 }
 
 .pdf-viewer {
   width: 100%;
   height: 100%;
 }
+
 .centro {
   display: flex;
   justify-content: center;
@@ -129,12 +128,12 @@
   flex-direction: column;
   align-items: center;
 }
-#btn-download{
+
+#btn-download {
   position: relative;
-  
 }
-.btn-card-0{
+
+.btn-card-0 {
   display: flex;
   justify-content: space-around;
-
 }
